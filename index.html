@@ -164,22 +164,6 @@
     margin: 6px 0 18px;
   }
 
-  #btn-salvar{
-    width:100%;
-    padding: 13px;
-    border-radius: 14px;
-    border: none;
-    background: linear-gradient(135deg, var(--gold-soft), var(--gold));
-    color: var(--bg-deep);
-    font-weight:700;
-    font-size: 0.92rem;
-    cursor:pointer;
-    transition: transform .15s ease;
-    position:relative;
-    z-index:1;
-  }
-  #btn-salvar:hover{ transform: translateY(-2px); }
-
   .rodape{
     margin-top: 18px;
     font-size: 0.7rem;
@@ -234,32 +218,8 @@
 
   <div class="divisor"></div>
 
-  <button id="btn-salvar">Salvar contato</button>
   <div class="rodape">Cartão digital · Nexus IA</div>
 </div>
 
-<script>
-  document.getElementById('btn-salvar').addEventListener('click', () => {
-    const vcard = [
-      'BEGIN:VCARD',
-      'VERSION:3.0',
-      'N:Torres da Rocha;Victor Emanuel;;;',
-      'FN:Victor Emanuel',
-      'ORG:Nexus IA',
-      'TITLE:Founder & CEO',
-      'TEL;TYPE=CELL:+5522988330445',
-      'URL:https://site-nexus-production.up.railway.app/',
-      'END:VCARD'
-    ].join('\n');
-
-    const blob = new Blob([vcard], { type: 'text/vcard' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'victor-emanuel.vcf';
-    a.click();
-    URL.revokeObjectURL(url);
-  });
-</script>
 </body>
 </html>
